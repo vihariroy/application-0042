@@ -1,0 +1,37 @@
+div.container.message-container
+  div#message-headline
+    h1 Messages
+    // h2.subheader-collapse(ng-click="isCollapsed=true") Show messages for closed actions
+  div.message-header(ng-click="isCollapsed=!isCollapsed" ng-repeat="action in actions | filter:filterActions | orderBy:actionOrder")
+    ul.message-header-list.col-md-12
+      li.col-md-1
+        div.message-image-container
+          img(src="../img/user-placeholder.png" ng-show="!currentUser.image || currentUser.image === ''")
+          img(ng-src="{{action.user.image}}" ng-hide="!currentUser.image || currentUser.image === ''")
+      ul.col-md-8
+        li.message-user-action-name
+          h1(ng-hide="!action.user.firstName && !action.user.lastName") {{action.user.firstName}} {{action.user.lastName}} ({{action.actionName}}):
+          h1(ng-show="!action.user.firstName && !action.user.lastName") {{action.user.username}} ({{action.actionName}}):
+        li
+          h2 {{action.story}}
+      li#message-action-date.col-md-3
+        h2 {{action.startedDatetime | date: 'medium'}}
+
+    div(collapse="isCollapsed")
+      form.form-horizontal(name="updateActionForm" ng-submit="createMessage(action, comment); comment = null")
+        input.form-control.col-md-offset-2.col-md-7(name="comment", type="text", placeholder="Add a comment...", ng-model="comment" ng-click="isCollapsed = true")
+      div.message-body(ng-repeat="message in action.messages track by $index | orderBy:messageOrder")
+        ul.message-info-list.col-md-11.col-md-offset-1
+          li.col-md-1
+            div.message-image-container
+              img(src="../img/user-placeholder.png" ng-show="!message.user.image || message.user.image === ''")
+              img(ng-src="{{message.user.image}}")
+          ul.col-md-7
+            li.message-user-action-name
+              h1(ng-hide="!message.user.firstName && !message.user.lastName") {{message.user.firstName}} {{message.user.lastName}}:
+              h1(ng-show="!message.user.firstName && !message.user.lastName") {{message.user.username}}:
+            li
+              h2 {{message.comment}}
+          li#message-action-date.col-md-3
+            h2 {{message.startedDatetime | date: 'short'}}
+        

@@ -1,0 +1,24 @@
+.navbar-right(ng-controller="openSignupLoginModalCtrl")
+  // Login form, sign in and sign up buttons
+  form.navbar-form(ng-hide="identity.isAuthenticated()")
+    button.login-button(ng-click="loginOpen('sm')") Log In
+    button.signup-button(ng-click="signupOpen('sm')") Sign up
+  // If user is authenticated, show this instead of login form
+  ul.nav.navbar-nav.navbar-right.header-dd(ng-show="identity.isAuthenticated()")
+    li.dropdown
+      a.dropdown-toggle.hvr-radial-out(href="", data-toggle="dropdown")
+        .image-container
+          img(src="../img/user-placeholder.png" ng-show="!identity.currentUser.image || identity.currentUser.image === ''")
+          img(ng-src="{{identity.currentUser.image}}" ng-hide="!identity.currentUser.image || identity.currentUser.image === ''")
+        span#firstLastName(ng-show="!identity.currentUser.firstName && !identity.currentUser.lastName") {{identity.currentUser.username}}
+        span(ng-hide="!identity.currentUser.firstName && !identity.currentUser.lastName") {{identity.currentUser.firstName}} {{identity.currentUser.lastName}}
+        b.caret
+      ul.dropdown-menu.pull-right
+        li(ng-show="identity.currentUser.isAdmin()")
+          a(href="/admin/users") User Admin
+        li
+          // a(href="/profile") Edit Profile
+          a(href="", ng-click="profileOpen()") Edit Profile
+        li
+          a(href="", ng-click="signout()") Sign Out
+          

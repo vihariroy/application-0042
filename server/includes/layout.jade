@@ -1,0 +1,28 @@
+!!!5
+html
+  head
+    title 0042.us
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
+    link(rel="stylesheet", href="/css/bootstrap.css")
+    link(rel="stylesheet", href="/vendor/components-font-awesome/css/font-awesome.css")
+    link(rel="stylesheet", href="/vendor/angular-bootstrap-datetimepicker/src/css/datetimepicker.css")
+    link(rel="stylesheet", href="/vendor/ngDialog/css/ngDialog.css")
+    link(rel="stylesheet", href="/vendor/toastr/toastr.css")
+    link(rel="stylesheet", href="/vendor/perfect-scrollbar/src/perfect-scrollbar.css")
+    link(rel="stylesheet", href="/vendor/angular-loading-bar/src/loading-bar.css")
+    link(rel="stylesheet", href="/css/site.css")
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700')
+    link(rel="stylesheet", href="/vendor/ngImgCrop/compile/unminified/ng-img-crop.css")
+    // link(rel="stylesheet", href="/vendor/angular-material/angular-material.css")
+  body(ng-app='app' ng-controller="appCtrl")
+    div.loading(ng-hide="loaded")
+      div.bullets
+        div.bullet
+        div.bullet
+        div.bullet
+        div.bullet
+    div(ng-cloak="" ng-show="loaded")
+      include currentUser
+      block main-content
+      include scripts

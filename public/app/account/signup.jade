@@ -1,0 +1,23 @@
+form.form-horizontal(name="signupForm" novalidate)
+  div.login-modal-container
+    img.login-logo-image(src="img/login-logo.png")
+    img.action-modal-image2.shadow(src="img/svg/x.svg", ng-click="closeModal()")
+    h3 Your new life Time Saver
+    h4 Create your actions and follow your life flow
+    
+    input.login-modal-button(name="username", type="text", placeholder="Username", ng-model="username", ng-minlength="3", ng-maxlength="20", autocomplete="off", required)
+    p.help-block(ng-show="signupForm.username.$error.minlength") Username is too short.
+    p.help-block(ng-show="signupForm.username.$error.maxlength") Username is too long.
+    input.login-modal-button(name="email", type="email", placeholder="Email", ng-model="email", autocomplete="off", required)
+    p.help-block(ng-show="signupForm.email.$invalid && !signupForm.email.$pristine") Enter a valid email.
+    input.login-modal-button(name="password", type="password", placeholder="Password", ng-model="password", ng-minlength="5", required)
+    p.help-block(ng-show="signupForm.password.$error.minlength") Password is too short.
+    
+    button.btn.btn-default.login-modal-button.login-modal-login-button(ng-click="signup()", ng-disabled="signupForm.$invalid" novalidate) Sign up
+    div.login-or
+      hr 
+      h6 or
+      hr
+    button.login-modal-signup-button(ng-click="loginOpen('sm');closeModal()" novalidate) Login
+    h5 By signing in you agree to our 00 | 42 <br> User Agreement and Privacy Policy
+    

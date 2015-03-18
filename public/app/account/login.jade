@@ -1,0 +1,16 @@
+form.navbar-form(ng-hide="identity.isAuthenticated()" novalidate)
+  div.login-modal-container
+    img.login-logo-image(src="img/login-logo.png")
+    img.action-modal-image2.shadow(src="img/svg/x.svg", ng-click="closeModal()")
+    h3 Your new life Time Saver
+    h4 Create your actions and follow your life flow
+    input.login-modal-button(name="username", type="text", placeholder="Username or Email", ng-model="username", autocomplete="off" autofocus)
+    input.login-modal-button(type="password", placeholder="Password", ng-model="password")
+    button.btn.btn-default.login-modal-button.login-modal-login-button(ng-click="signin(username, password)" novalidate) Log In
+    div.login-or
+      hr 
+      h6 or
+      hr
+    button.login-modal-signup-button(ng-click="signupOpen('sm');closeModal()" novalidate) Sign Up
+    h5 By signing in you agree to our 00 | 42 <br> User Agreement and Privacy Policy
+    

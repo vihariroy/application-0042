@@ -1,0 +1,39 @@
+extends ../includes/layout
+block main-content
+  .navbar.navbar-default.navbar-fixed-top#wrap
+    .container
+      .navbar-header
+        a.navbar-brand(href="/actions" ng-click="defaultActionState()")
+          img(src="img/logo-header.png")
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+      .navbar-collapse(ng-init="isOpen=false" ng-class="{'collapse':!isOpen, 'in':isOpen}")
+              
+        div.dropdown-name(ng-include="'/partials/account/navbar-login'")
+        
+        ul.nav.navbar-nav.header-ul(ng-show="identity.isAuthenticated()")
+          li.header-list.hvr-radial-out
+            a(href="", ng-click="toggleActionState();")
+              img(src="img/svg/available-actions.svg", ng-show="currentPath === '/actions'", ng-hide="currentPath === '/completed-actions' || currentPath === '/scheduled-actions'")
+              img(src="img/svg/completed-actions.svg", ng-show="currentPath === '/completed-actions'")
+              img(src="img/svg/scheduled-actions.svg", ng-show="currentPath === '/scheduled-actions'")
+          li.header-list.hvr-radial-out
+            a(href="/my-actions" ng-click="defaultActionState()")
+              img(src="img/svg/my-actions.svg")
+          li.header-list.hvr-radial-out
+            a(href="/story" ng-click="defaultActionState()")
+              img(src="img/svg/story-icon.svg")
+          
+        ul.nav.navbar-nav.right.header-ul(ng-show="identity.isAuthenticated()" ng-click="resetNotifications()")
+          li.header-list.right.hvr-radial-out(notification-badge="badgeCount")
+            a(href="/messages" ng-click="defaultActionState()")
+              img(src="img/svg/message-screen-icon.svg")
+
+  section.content#wrap.scroller
+    div.content-elements(ng-view)
+
+  // footer.container.text-center
+  //   p 0042.us &copy; 2014

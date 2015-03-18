@@ -1,0 +1,69 @@
+div.user-edit-modal
+  div.user-edit-header(ng-click="isCollapsed=!isCollapsed")
+    ul.user-header-list
+      li
+        h1 User Profile
+      li
+        div.image-container
+          img(ng-src="{{currentUser.image}}")
+      li
+        h2 Change profile picture
+  div.user-header-collapsed-list(collapse="isCollapsed")
+    ul
+      li
+        div#select-picture Select Picture
+      li.choose-file-input
+        input#fileInput(type="file")
+        div#myImageName {{myImageName}}
+    ul
+      li
+        div.cropArea
+          img-crop(image="myImage" result-image="myCroppedImage")
+      li.imggContainer
+        div#imggContainer-label Cropped image
+        div
+          img(ng-src="{{myCroppedImage}}")
+    
+  form.user-edit-modal-form(name="profileForm")
+    ul.list-unstyled.user-edit-list
+      li
+        // Username
+        .form-group(ng-class="{ 'has-error' : profileForm.username.$invalid && !profileForm.username.$pristine }")
+        label(for="username") Username
+        input(name="username", type="text", placeholder="Username", ng-model="username", ng-minlength="3", ng-maxlength="20", focus)
+      li
+        // Email
+        .form-group(ng-class="{ 'has-error' : profileForm.email.$invalid && !profileForm.email.$pristine }")
+        label(for="email") Email
+        input(name="email", type="email", placeholder="Email", ng-model="email")
+      li
+        // Password
+        .form-group(ng-class="{ 'has-error' : profileForm.password.$invalid && !profileForm.password.$pristine }")
+        label(for="password") Password
+        input(name="password", type="password", placeholder="Password", ng-model="password", ng-minlength="5")
+      li
+        // First name
+        .form-group
+        label(for="fname") First Name
+        input(name="fname", type="text", placeholder="First Name", ng-model="fname")
+      li
+        // Last name
+        .form-group
+        label(for="lname") Last Name
+        input(name="lname", type="text", placeholder="Last Name", ng-model="lname")
+      li
+        // Story
+        .form-group
+        label(for="story") Story
+        input(name="story", type="text", placeholder="Personal Goal", ng-model="story")
+      li
+        // Location
+        .form-group
+        label(for="location") Location
+        input(name="location", type="text", placeholder="Location", ng-model="location")
+        
+      div.user-edit-buttons 
+        .form-group
+          a.btn.btn-default(href="", ng-click="cancel()") Cancel
+          button.btn.btn-primary(ng-click="update()", ng-disabled="updateActionForm.$invalid", novalidate) Submit
+          

@@ -1,0 +1,9 @@
+.container
+  table.table.table-hover.table-striped.table-condensed
+    thead
+      h3 List of all users
+    tr(ng-repeat="user in users")
+      td 
+        h2 {{user.username}}
+        h4 {{user.email}}
+        b {{user.location}}

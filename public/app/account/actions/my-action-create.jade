@@ -1,0 +1,67 @@
+div.action-create-modal-container
+  h1 Create Action
+  form(name="createActionForm")
+    ul.list-unstyled.action-create-list
+      li
+        // Action name
+        .form-group(ng-class="{ 'has-error' : createActionForm.actionName.$invalid && !createActionForm.actionName.$pristine }")
+          label(for="actionName") Action Name
+          input.action-update-long-form(autocomplete="off", name="actionName", type="text", placeholder="Action Name", ng-model="actionName", ng-minlength="5")
+          p.help-block(ng-show="createActionForm.actionName.$error.minlength") Action name is too short.
+      li#checkbox-input
+        // Action private
+        .form-group(ng-class="{ 'has-error' : createActionForm.private.$invalid && !createActionForm.private.$pristine }")
+          label(for="private") Private
+          input.action-create-short-form(autocomplete="off", name="private", type="checkbox", ng-model="private")
+      li#checkbox-input
+        // Action story
+        .form-group(ng-class="{ 'has-error' : createActionForm.story.$invalid && !createActionForm.story.$pristine }")
+          label(for="story") Action Story
+          input.action-create-short-form(autocomplete="off", name="story", type="checkbox", ng-model="story" ng-true-value="'{{identity.currentUser.story}}'" ng-false-value="'Add your story?'")
+          span.checkbox-info {{story}}
+      li
+        // Time spent
+        .form-group.form-group(ng-class="{ 'has-error' : createActionForm.timeSpent.$invalid && !createActionForm.timeSpent.$pristine }")
+          label(for="timeSpent") Time Spent
+          input.action-update-short-form(name="timeSpent", type="text", placeholder="Time Spent (minutes)", ng-model="timeSpent", ng-pattern="/^[0-9]{1,7}$/", autocomplete="off")
+          p.help-block(ng-show="createActionForm.timeSpent.$invalid && !createActionForm.timeSpent.$pristine") Enter a valid time spent.
+      li
+        // Money spent
+        .form-group.form-group(ng-class="{ 'has-error' : createActionForm.moneySpent.$invalid && !createActionForm.moneySpent.$pristine }")
+          label(for="moneySpent") Money Spent
+          input.action-update-short-form(name="moneySpent", type="text", placeholder="Money Spent (dollars)", ng-model="moneySpent", ng-pattern="/^[0-9]{1,7}$/", autocomplete="off")
+          p.help-block(ng-show="createActionForm.moneySpent.$invalid && !createActionForm.moneySpent.$pristine") Enter a valid money spent.
+      li
+        // Repeat
+        .form-group
+          label(for="repeat") Repeat
+          input.action-update-short-form(autocomplete="off", name="repeat", type="text", placeholder="Repeat", ng-pattern="/^[0-9]{1,7}$/", ng-model="repeat")
+      li
+        // Location
+        .form-group
+          label(for="location") Location
+          input.action-update-long-form(autocomplete="off", name="location", type="text", placeholder="Location", ng-model="location" required)
+          p.help-block(ng-show="createActionForm.location.$error.minlength") Location is required.
+  div.action-edit-header(ng-click="isCollapsed=!isCollapsed")
+    ul
+      li
+        div#select-picture-action Upload image
+      li.choose-file-input-action
+        input#fileInput-action(type="file")
+        div#myImageName-action {{myImageName}}
+        
+  div.action-header-collapsed-list(collapse="isCollapsed")
+    ul
+      li
+        div.cropArea-action
+          img-crop(image="myImage" result-image="myCroppedImage" result-image-size="400")
+      li#imggContainer-action
+        div#imggContainer-label-action Cropped image
+        div
+          img(ng-src="{{myCroppedImage}}")
+
+  div#action-create-buttons
+    .form-group
+      a.btn.btn-default(href="/my-actions" ng-click="cancel()") Cancel
+      button.btn.btn-primary(ng-click="createAction()", ng-disabled="createActionForm.$invalid", novalidate) Submit
+      

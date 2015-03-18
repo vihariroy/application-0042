@@ -1,0 +1,2043 @@
+// @import url("href='http://fonts.googleapis.com/css?family=Lato:300,400,700")
+
+html, body
+  height 100%
+  color #FDFDFD
+  overflow-x hidden
+
+body
+  background-color rgba(243, 246, 246, 0.15)
+  font-family 'Lato', sans-serif
+  padding-top 60px
+  
+body {
+	position: relative;
+	overflow-y: auto;
+}
+body::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+body::-webkit-scrollbar-track {
+	background-color: rgba(113,112,107,0.1);
+	-webkit-border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb:vertical {
+	background-color: rgba(0,0,0,.2);
+	-webkit-border-radius: 6px;
+}
+body::-webkit-scrollbar-thumb:vertical:hover,
+body::-webkit-scrollbar-thumb:horizontal:hover {
+	background: #1f2632;
+}
+body::-webkit-scrollbar-thumb:horizontal {
+	background-color: rgba(0,0,0,.2);
+	-webkit-border-radius: 6px;
+}
+  
+input
+  padding-right 1em
+  
+button
+  outline 0
+
+//Toastr notifications
+.toast-top-right
+  top 60px
+
+// .toast-success
+//   background-color #13987e
+  
+// LOADING SCREEN
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999;
+  background-color: #ccc;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.loading .bullets {
+  position: absolute
+  left: 50%
+  top: 50%
+  // top 50%
+  // -webkit-transform translateY(50%)
+  // -moz-transform translateY(50%)
+  // -ms-transform translateY(50%)
+  // transform translateY(50%)
+  
+}
+.loading .bullet {
+  position: absolute;
+  padding: 5px;
+  border-radius: 50%;
+  background: #65a3ff;
+  -webkit-animation: animIn 1s ease-in-out 0s infinite;
+  animation: animIn 1s ease-in-out 0s infinite;
+}
+.loading .bullet:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.loading .bullet:nth-child(2) {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+.loading .bullet:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.loading .bullet:nth-child(4) {
+  -webkit-animation-delay: 0.45s;
+  animation-delay: 0.45s;
+}
+
+
+.loading2 {
+  position: absolute;
+  top: 50%
+  left: 50%;
+  width: 100%;
+  height: 100%;
+}
+.loading2 .bullets {
+  position absolute
+  left 60%
+  top 60%
+  
+}
+.loading2 .bullet {
+  position: absolute;
+  padding: 5px;
+  border-radius: 50%;
+  background: #65a3ff;
+  -webkit-animation: animIn 1s ease-in-out 0s infinite;
+  animation: animIn 1s ease-in-out 0s infinite;
+}
+.loading2 .bullet:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.loading2 .bullet:nth-child(2) {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+.loading2 .bullet:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.loading2 .bullet:nth-child(4) {
+  -webkit-animation-delay: 0.45s;
+  animation-delay: 0.45s;
+}
+
+
+
+@-webkit-keyframes animIn {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0;
+  }
+}
+@keyframes animIn {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0;
+  }
+}
+.shadow, .shadow2 {
+  background-color: #eee;
+  padding: .2em;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  // SVG SHADOW
+  .shadow {
+    background-color: transparent;
+      -webkit-filter: drop-shadow( 0px 3px 1px rgba(0,0,0,0.3) );
+         -moz-filter: drop-shadow( 0px 3px 1px rgba(0,0,0,0.3) );
+          -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#000')";
+              filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#000')";
+              filter: drop-shadow( 0px 3px 1px rgba(0,0,0,0.3) ); /* Same syntax as box-shadow */
+  }
+  // svg shadow for header
+  .shadow2 {
+    background-color: transparent;
+      -webkit-filter: drop-shadow( 0px 3px 1px #ffffff );
+         -moz-filter: drop-shadow( 0px 3px 1px #ffffff );
+          -ms-filter: drop-shadow( 0px 3px 1px #ffffff );
+              filter: drop-shadow( 0px 3px 1px #ffffff ); /* Same syntax as box-shadow */
+  }
+}
+ 
+.container
+  width 100%
+  
+// .content
+//   width 100%
+//   height 100%
+//   overflow auto
+  
+// .scroller
+//   white-space pre-line
+//   height 100%
+//   overflow-y hidden
+//   position relative
+  
+// HEADER //
+
+.navbar-brand
+  position relative
+  top -2px
+  z-index 1
+  
+.navbar-form
+  margin-top 0
+   
+// .navbar
+//   background #1f2632
+//   width 100%  // fix this
+//   height 60px
+//   margin auto
+//   -webkit-backface-visibility hidden
+//   -moz-backface-visibility hidden
+//   -ms-backface-visibility hidden
+//   backface-visibility hidden
+  
+.header-list a img
+  opacity 0.7
+  
+.header-list:hover a img
+  opacity 1
+  
+.header-ul
+  height 60px
+  margin-top 6px
+  
+.header-ul li
+  width 60px
+  height 100%
+  
+.header-ul li a
+  position relative
+  height 100%
+
+.header-ul li a img
+  position absolute
+  top 50%
+  left 50%
+  -webkit-transform translate(-50%,-50%)
+  -moz-transform translate(-50%,-50%)
+  -ms-transform translate(-50%,-50%)
+  transform translateY(-50%,-50%)
+  
+/* Radial Out */
+.hvr-radial-out {
+  position: none;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -ms-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+  
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #5198d9;
+  opacity: 0.2;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  -ms-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  color: white;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+}
+
+.navbar-collapse
+  position relative
+  background-color #1f2632
+  top -6px
+  
+.navbar.navbar-default
+  height 60px !important
+  background-color #1f2632 !important
+
+.navbar-header a.navbar-brand
+  color #ccc
+  font-size 2em
+
+.right
+  float right
+  
+.image-container
+  position relative
+  width 33px
+  height 33px
+  background-color transparent
+  overflow hidden
+  background-image url(../img/user-placeholder.png)
+  border-radius 100%
+
+.image-container img
+  display block
+  margin auto
+  width 100%
+  border-radius 100%
+
+.search
+  width 160px
+  height 36px
+  
+.login-button
+  position relative
+  width 95px
+  height 35px
+  background #1f2632
+  margin-right 12px
+  border 2px solid #8394b3
+  color #8394b3
+  -webkit-border-radius 3px
+  -moz-border-radius 3px
+  -ms-border-radius 3px
+  border-radius 3px
+  top 5px
+  margin-top 0.9em
+
+.login-button:active,
+.login-button:focus
+  background-color rgba(131,148,179,0.7)
+  outline 0
+
+.signup-button
+  position relative
+  width 95px
+  height 35px
+  background #ffffff
+  color #1f2632
+  border 2px solid white
+  font-weight 700
+  -webkit-border-radius 3px
+  -moz-border-radius 3px
+  -ms-border-radius 3px
+  border-radius 3px
+  top 5px
+  
+.subheader-sort
+  display inline-table
+  position relative
+  width 100%
+  height 60px
+  font-size 14px
+  background #f5f7fa
+  
+.subheader-sort a
+  text-decoration none
+  
+.subheader-container
+  position relative
+  height 60px
+  text-align center
+  // width 85%
+  max-width 1070px
+  margin 0 auto
+  overflow hidden
+
+.subheader-container li
+  position relative
+  display inline-block
+  padding 0 10px
+  cursor pointer
+  
+.subheader-container li img,
+.subheader-container li span
+  opacity 0.55
+  color #687283
+  
+.subheader-sort img
+  margin-right 10px
+  
+#add
+  position relative
+  
+.search-input
+  // width 160px
+  height 36px
+  position relative
+  // top 10px
+  background-image url(../img/search.png)
+  background-repeat no-repeat
+  background-position 90% 8px
+  // width 80%
+  
+input:focus
+  border 2px solid #5198d9 !important
+
+.subheader-sort a
+  color inherit
+  
+.subheader-container li
+  height 100%
+  overflow hidden
+  
+.subheader-container li > *
+  position relative
+  top 32%
+  
+.search-filter
+  position relative
+  height 100%
+  float right
+  top 10px
+
+.add-action
+  position relative
+  top 10px
+  float left
+  padding-right 0
+  
+.add-action img
+  float right
+
+#checkbox-input
+  width 100%
+  
+#checkbox-input label,
+#checkbox-input span
+  position relative
+  bottom .5em
+
+.subheader-container li.active
+ -webkit-transition all 0.5s
+ -moz-transition all 0.5s
+ -ms-transition all 0.5s
+ transition all 0.5s
+  background-color #fff
+  
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #5198d9;
+  height: 3px;
+  -webkit-transition-property: left, right;
+  -moz-transition-property: left, right;
+  -ms-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, 
+.hvr-underline-from-center:focus:before, 
+.hvr-underline-from-center:active:before, 
+.hvr-underline-from-center.active:before {
+  left: 0;
+  right: 0;
+}
+.hvr-underline-from-center.active
+  background-color #fff
+.hvr-underline-from-center.active > *
+  opacity 1
+
+.empty-state
+  position relative
+  top 6.5em
+  text-align center
+  font-size 18px
+  font-weight 300
+  color #9ea9bb
+  
+.empty-state-arrow
+  position absolute
+  left 3.7em
+  top -6.5em
+  
+#list-of-actions
+  margin-top 3em
+  
+.action-list li
+  display inline-block
+  color #bdc6d8
+  font-size 14px
+  
+.action-container
+  // cursor pointer
+  vertical-align text-top
+  background-color #fafbfc
+  width 210px
+  position relative
+  left 2px
+  top 2px
+  -webkit-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  -moz-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  -ms-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  border-radius 4px;
+  overflow hidden
+  z-index 123
+  margin .5em
+  box-shadow 0px
+
+.isVisible
+  visibility hidden
+
+.double
+  position relative
+  z-index 0
+  width 200px
+  height 10px
+  top -9px
+  left 15px
+  border-radius 4px
+  background-color #fafbfc
+  overflow hidden
+  box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  -webkit-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  -moz-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  -ms-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+
+.triple
+  position relative
+  z-index -1
+  width 190px
+  height 10px
+  top -15px
+  left 20px
+  border-radius 4px
+  background-color #fafbfc
+  overflow hidden
+  box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  -webkit-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  -moz-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+  -ms-box-shadow 0px 1px 3px 0px rgba(0,0,0,0.15)
+
+
+.action-container:hover
+  -webkit-box-shadow 0px 1px 4px 2px rgba(44,44,44,0.15)
+  -moz-box-shadow 0px 1px 4px 2px rgba(44,44,44,0.15)
+  -ms-box-shadow 0px 1px 4px 2px rgba(44,44,44,0.15)
+  box-shadow 0px 1px 4px 2px rgba(44,44,44,0.15)
+
+.action-image-container
+  width 210px
+  height 210px
+
+.action-image-container img
+  position relative
+  display block
+  top 8px
+  margin auto
+  max-width 194px
+  height 194px
+  border-radius 3px
+
+.action-image-container .placeholder-image
+  position relative
+  width 40%
+  height 40%
+  top 30%
+
+.repeatedNumber
+  position absolute
+  margin-top 5px
+  margin-left 10px
+  color #ffffff
+  font-size 60px
+  text-shadow 0px 2px 3px rgba(0,0,0,0.3)
+  top 0px
+  z-index 5
+  
+.action-list-info > *
+  font-weight 300
+  text-align left
+  
+.action-list-info > li
+  padding .5em
+  width 100%
+  height 60px
+  margin-left 0
+
+.action-list-info .action-name
+  width 100% !important
+  font-size 18px
+  font-weight 400
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 180px;
+  
+.action-list-info ul > li.pull-right
+  padding .7em
+  
+.action-list-info
+  margin-bottom 0
+  
+.action-list-info2
+  padding .5em
+  margin 0
+  border-top 1px solid #eef0f5
+
+.action-list-info2 > li
+  padding .3em
+  // display inline-block
+  // display -webkit-box
+  width 80px
+  height 26px
+  // -webkit-line-clamp 1
+  // -webkit-box-orient vertical
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+  margin-bottom 0
+  
+.action-list-info img, .action-list-info2 img
+  vertical-align middle
+  margin-right .5em
+  position relative
+  bottom .1em
+  z-index 1
+  
+  
+#date-text
+  margin 0
+  margin-left 10px
+  width 150px
+  
+#date-text p
+  margin 0
+  
+.delete-action-icon
+  position absolute
+  bottom 0
+  right 7px
+  width 117px
+  height 35px
+
+.delete-action-icon li
+  display inline-block
+  width 38px
+  height 35px
+  
+.close-modal-icon
+  position relative
+  width 33px
+  height 33px
+  z-index 33
+   
+hr
+  margin 0
+  
+////////////  
+// MODALS //
+////////////
+
+// LOGIN and SIGNUP MODALS //
+
+.login-modal-container .modal-dialog
+  width: 426px
+  height 190px
+  color #8091b2
+  
+.login-modal-container *
+  display block
+  margin-left auto
+  margin-right auto
+  text-align center
+
+  // header //
+a.dropdown-toggle
+  height 60px
+  position relative
+  top 5px
+
+a.dropdown-toggle span
+  position relative
+  bottom 16px
+  
+  
+.dropdown-menu
+  position absolute
+  top 100%
+  right 0
+  margin-top 5px !important
+  
+.dropdown-menu li:hover a
+  background-color #1f2632
+  
+a.dropdown-toggle .image-container
+  display inline-block
+  position relative
+  bottom .4em
+  margin-left 0
+  margin-right 1em
+  
+a.dropdown-toggle:hover,
+a.dropdown-toggle:focus,
+a.dropdown-toggle:hover .caret,
+a.dropdown-toggle:focus .caret
+  color #fff !important
+  border-top-color #fff !important
+  
+a.dropdown-toggle .caret, 
+a.dropdown-toggle:hover .caret
+  position relative
+  border-top 6px solid #000
+  border-right 6px solid transparent
+  border-bottom 0 dotted
+  border-left 6px solid transparent
+  margin-left .5em
+  bottom 16px
+
+.login-logo-image
+  margin-top 56px
+  
+.login-modal-container h3
+  width 180px
+  margin-top 25px
+  font-size 16px
+  
+.login-modal-container h4
+  margin-top 15px
+  margin-bottom 46px
+  width 275px
+  font-size 14px
+
+  // body //
+.login-modal-button
+  width 245px
+  height 35px
+  margin-top 19px
+  border 1px solid #bdc6d8
+  border-radius 4px
+
+.login-modal-login-button
+  border 0
+  background #253551
+  color #ffffff
+  line-height 1
+
+.login-or
+  display block
+  width 245px
+  height 35px
+  margin-top 19px
+
+.login-or > *
+  float left
+  display block
+
+.login-or h6
+  margin-left 7px
+  margin-right 7px
+  line-height 20px
+
+.login-or hr
+  display block
+  float left
+  width 109px
+  border-bottom 1px solid #ebeef3
+
+.login-modal-signup-button
+  border 0
+  background #ffffff
+  color #8091b2
+  margin-top 19px
+  margin-bottom 47px
+  text-decoration underline
+  
+.login-modal-container h5
+  margin-top 0
+  font-size 11px
+  font-weight 300
+  
+/////////////////////
+// ADD ACTION MODAL//
+/////////////////////
+
+body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom
+  margin-right 0
+
+.modal::-webkit-scrollbar,
+.modal-dialog::-webkit-scrollbar
+  display none
+  
+.modal
+  outline 0
+  
+.modal-content
+  margin-bottom 2em
+
+.add-action-modal .modal-dialog
+  width 560px
+  height 450px
+  color #8394b3
+  
+/////////////////////
+
+// .action-update-header
+//   border 1px solid red
+//   top 30px
+ 
+.action-header-collapsed-list
+  position relative
+  width 520px
+  height 200px
+
+.action-create-list
+  position relative
+  width 560px
+  height 210px
+
+.action-edit-header li
+  position relative
+  display inline-block
+  left -18px
+  bottom 0.7em
+
+.action-update-header li
+  position relative
+  display inline-block
+  left -18px
+  bottom 0.7em
+
+#select-picture-action
+  position relative
+  height 35px
+  margin-right 12px
+  font-size 14px
+  bottom 0px
+
+.choose-file-input-action
+  width 120px
+  height 35px
+  background-image url(../img/choose-file.png)
+  background-repeat no-repeat
+  top 50px
+
+#myImageName-action
+  position relative
+  margin-left 9px
+  width 281px
+  height 35px
+  bottom 50px
+  left 110px
+  font-size 14px
+  border 1px solid #bdc6d8
+  padding-left 10px
+  padding-top 7px
+  border-radius 3px
+  /* -webkit-line-clamp: 1; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+.action-edit-header input
+  width 100px
+  height 35px
+  opacity 0
+  margin-bottom 15px
+  
+.action-update-header input
+  width 100px
+  height 35px
+  opacity 0
+  margin-bottom 15px
+
+.cropArea-action
+  width 139px
+  height 139px
+  margin-left 97px
+  margin-right 45px
+  background #e3e5ea
+  
+#imggContainer-action
+  position relative
+  width 96px
+  height 96px
+  background #e3e5ea
+  top -42px
+
+#imggContainer-action img
+  position relative
+  width 96px
+  height 96px
+  top -20px
+  left 0px
+ 
+#imggContainer-label-action
+  position relative
+  top -21px
+  font-size 14px
+  
+////////////////// 
+// ACTION MODAL //
+//////////////////
+
+body.modal-open #wrap
+  -webkit-filter blur(2px)
+  -moz-filter blur(2px)
+  -o-filter blur(2px)
+  -ms-filter blur(2px)
+  filter blur(2px)
+  
+.modal-content
+  -webkit-border-radius 3px
+  -moz-border-radius 3px
+  -ms-border-radius 3px
+  border-radius 3px
+  overflow hidden
+  
+.modal.fade .modal-dialog
+  top 15%
+  -webkit-transform translate3d(-50%, 0, 0)
+  -moz-transform translate3d(-50%, 0, 0)
+  -ms-transform translate3d(-50%, 0, 0)
+  transform translate3d(-50%, 0, 0)
+  position absolute
+
+.action-modal-container h1
+  margin .3em 0 !important
+  padding 0 32px
+  
+.action-modal-container h2,
+.action-modal-container h3
+  margin 0 !important
+  padding 0 32px
+
+.action-modal-container .modal-dialog
+  width 426px
+  height 680px
+  color #bdc6d8
+
+.action-modal-image
+  margin auto !important
+  text-align center
+  position relative
+
+.action-modal-image .placeholder-image
+  margin auto
+
+.action-modal-image1
+  width 100%
+  
+.action-modal-image11
+  position absolute
+  top 20%
+  left 37%
+  margin 4em auto
+  height auto
+
+.action-modal-image2
+  position absolute
+  float right
+  top 7px
+  right 7px
+  width 30px
+  height 30px
+  cursor pointer
+
+.close-modal-icon
+  width 10px
+  height 10px
+
+.action-modal-container h1
+  color #8394b3
+  font-size 26px
+  margin-left 33px
+  margin-bottom 12px
+  
+.action-modal-container h2
+  color #bdc6d8
+  font-size 18px
+  margin-left 33px
+  margin-bottom 16px
+  
+.action-modal-container h3
+  font-size 14px
+  margin-left 33px
+
+.action-modal-container hr
+  border-bottom 1px solid rgba(131,148,179,0.1)
+  margin-bottom 16px
+  
+.action-detail-list
+  height 20px
+  margin-top 9px
+  margin-bottom 16px
+  list-style-type none
+
+.action-detail-list li
+  display inline
+  float left
+  margin-left 16px
+
+.action-detail-list img
+  margin-right 14px
+  margin-left 14px
+  
+#time-ok-icons
+  position absolute
+  bottom 1em
+  right 1em
+  width 50%
+  
+#time-ok-icons > *
+  float right
+  
+#group
+  padding-top .3em
+  padding-bottom .7em
+  
+#group > p
+  padding 0 32px
+
+.createMessageForm
+  width 100%
+  
+.createMessageForm ul
+  padding 12px 32px
+  padding-bottom 20px
+  width 100%
+  
+.createMessageForm textarea
+  width 100%
+  height auto
+  resize none
+  margin-top 10px
+  -webkit-border-radius 3px
+  -moz-border-radius 3px
+  -ms-border-radius 3px
+  border-radius 3px
+  border 1px solid #bdc6d8
+  
+.createMeesageButtons
+  position relative
+  left 206px
+  margin-top 36px
+  margin-bottom 30px
+  
+.createMeesageButtons a
+  margin-right 10px
+  
+  
+.action-messages
+  padding 0 32px
+
+.action-messages img
+  margin-right 15px
+  
+.comment-text
+  position relative
+  margin-left 54px
+  
+#comment-list
+  margin-bottom 1em
+
+
+/////////////////////// 
+// CREATE ACTION MODAL/
+///////////////////////
+
+.action-create-modal-container
+  width 560px
+  // height 550px
+  color #8091b2
+  
+
+.action-create-modal-container li
+  display inline-block
+  // height 36px
+  // margin-bottom 19px
+
+.action-create-modal-container input
+  border 1px solid #bdc6d8
+  margin-left 14px
+  color #8091b2
+  padding-left 15px
+
+.action-create-modal-container img
+  position absolute
+  top 20px
+  right 20px
+
+.action-create-modal-container h1
+  font-size 24px
+  margin-bottom 50px
+  margin-left 33px
+
+.action-create-modal-container h2
+  font-size 14px
+  font-weight normal !important
+  
+  
+.action-create-modal-container label
+  width 97px
+  font-size 14px
+  margin-left 7px
+  text-align right
+  font-weight normal !important
+  
+.action-create-long-form
+  width 400px
+  height 35px
+
+.action-create-short-form
+  width 55px
+  height 35px
+
+.action-create-image-form
+  width 190px
+  height 35px
+
+#action-create-buttons
+  position relative
+  width 195px
+  height 38px
+  bottom 33px
+  left 310px
+  margin-top 29px
+
+#action-create-buttons a
+  position relative
+  width 90px
+  height 35px
+  margin-right 10px
+  background #ffffff
+  color #bdc6d8
+  line-height 10px
+
+#action-create-buttons button
+  position relative
+  width 90px
+  height 35px
+  background #253551
+  color #ffffff
+  line-height 10px
+
+.action-create-short-form
+  width 22px
+  height 22px
+
+.checkbox-info
+  position relative
+  margin-left 17px
+  margin-right 100px
+  color #c6cedf
+  
+// UPDATE ACTION MODAL //
+
+.action-update-modal-container 
+  // height 470px
+  color #8091b2
+
+.action-update-modal-container .modal-dialog
+  // width 520px !important
+  height 470px
+  color #8091b2
+  // border 1px solid red
+
+
+.action-update-modal-container li
+  display inline-block
+  height 36px
+  margin-bottom 19px
+
+.action-update-modal-container input
+  border 1px solid #bdc6d8
+  margin-left 14px
+  color #8091b2
+  padding-left 15px
+
+.action-update-modal-container img
+  position absolute
+  top 20px
+  right 20px
+
+.action-update-modal-container h1
+  font-size 24px
+  margin-bottom 50px
+  margin-left 33px
+
+.action-update-modal-container h2
+  font-size 14px
+  font-weight normal !important
+  
+.action-update-list
+  width 560px
+  height 104px
+
+.action-update-modal-container label
+  width 97px
+  font-size 14px
+  margin-left 7px
+  text-align right
+  font-weight normal !important
+  
+.action-update-long-form
+  width 400px
+  height 35px
+
+.action-update-short-form
+  width 55px
+  height 35px
+
+.action-update-image-form
+  width 190px
+  height 35px
+
+.action-update-buttons
+  position relative
+  width 195px
+  height 38px
+  bottom 35px
+  left 325px
+  margin-top 29px
+
+.action-update-buttons a
+  position relative
+  width 90px
+  height 35px
+  margin-right 10px
+  background #ffffff
+  color #bdc6d8
+  line-height 10px
+
+.action-update-buttons button
+  position relative
+  width 90px
+  height 35px
+  background #253551
+  color #ffffff
+  line-height 10px
+
+// USER UPDATE MODAL //
+.user-edit-modal .modal-dialog
+  width 560px
+  height 490px
+  color #8091b2
+  
+.user-edit-header
+  margin 0
+  width 500px
+  height 50px
+  left -20px
+  margin-bottom 45px
+
+.user-edit-header div
+  position relative
+  top 10px
+ 
+.user-header-list
+  position relative
+  height 60px
+  width 500px
+
+.user-header-list li
+  display inline-block
+  margin-right 15px
+  bottom 50px
+  
+.user-header-list h1
+  font-size 24px
+  
+.user-header-list h2
+  font-size 14px
+ 
+ /////////////////////
+.user-header-collapsed-list
+  position relative
+  width 520px
+  height 200px
+  
+  
+.user-header-collapsed-list li
+  position relative
+  display inline-block
+  left -18px
+
+#select-picture
+  position relative
+  height 35px
+  margin-right 12px
+  font-size 14px
+  bottom 5px
+
+.choose-file-input
+  width 120px
+  height 35px
+  background-image url(../img/choose-file.png)
+  background-repeat no-repeat
+  top 45px
+
+#myImageName
+  position relative
+  width 281px
+  height 35px
+  bottom 50px
+  left 110px
+  font-size 14px
+  border 1px solid #bdc6d8
+  padding-left 10px
+  padding-top 7px
+  border-radius 3px
+  
+.user-header-collapsed-list input
+  width 100px
+  height 35px
+  opacity 0
+  margin-bottom 15px
+
+.cropArea
+  width 139px
+  height 139px
+  margin-left 97px
+  margin-right 45px
+  background #e3e5ea
+  
+.imggContainer
+  position relative
+  width 96px
+  height 96px
+  background #e3e5ea
+  border-radius 100%
+  top -42px
+
+.imggContainer img
+  position relative
+  width 96px
+  height 96px
+  top -21px
+  border-radius 100%
+ 
+#imggContainer-label
+  position relative
+  top -21px
+  font-size 14px
+  
+.user-edit-modal
+  border-radius 7px
+  
+.user-edit-modal-form
+  width 538px
+  min-height 430px
+  background #ffffff
+  
+.user-edit-modal-form li
+  display inline-block
+  width 550px
+  height 36px
+  margin-bottom 19px
+  
+.user-edit-modal-form label
+  width 100px
+  font-size 14px
+  margin-left 7px
+  text-align right
+  color #8091b2
+  font-weight normal !important
+
+.user-edit-modal-form input
+  width 390px
+  height 37px
+  border 1px solid #bdc6d8
+  margin-left 14px
+  color #8091b2
+  padding-left 15px
+  border-radius 3px
+
+.user-edit-modal-form h1
+  margin-top 32px
+  font-size 24px
+  margin-bottom 50px
+  margin-left 33px
+  color #8091b2
+
+.user-edit-modal-form h2
+  font-size 14px
+  font-weight normal !important
+
+.user-edit-buttons
+  position relative
+  width 195px
+  height 38px
+  bottom 0px
+  left 320px
+  margin-top 29px
+  
+.user-edit-buttons a
+  position relative
+  width 90px
+  height 35px
+  margin-right 10px
+  background #ffffff
+  color #bdc6d8
+  line-height 10px
+
+.user-edit-buttons button
+  position relative
+  width 90px
+  height 35px
+  background #253551
+  color #ffffff
+  line-height 10px
+
+  
+// MESSAGES //
+.message-container
+  position relative
+  // width 1075px
+  height auto
+  // left 50%
+  // -webkit-transform translateX(-50%)
+  // -moz-transform translateX(-50%)
+  // -ms-transform translateX(-50%)
+  // transform translateX(-50%)
+  margin-bottom 1em
+
+#message-headline
+  position relative
+  margin-top 1em
+  // width 1075px
+  height 45px
+  margin-bottom 27px
+  // margin-left 20px
+  
+#message-headline h1
+  font-size 24px
+  color #717c91
+  position absolute
+  top -50%
+  -webkit-transform translateY(50%)
+  -moz-transform translateY(50%)
+  -ms-transform translateY(50%)
+  transform translateY(50%)
+
+#message-headline h2
+  text-decoration underline
+  font-size 14px
+  color #717c91
+  display inline
+  float right
+
+.message-image-container
+  width 38px
+  height 38px
+  float left
+  background-color transparent
+  background-image url(../img/user-placeholder.png)
+  background-repeat no-repeat
+  border-radius 100%
+  padding 0
+
+.message-image-container img
+  display block
+  margin auto
+  border-radius 100%
+  width 100%
+  
+#comment-inline > *
+  display inline-block
+  
+.message-header
+  float left
+  width 100%
+  
+.message-header .collapse.in
+  overflow hidden
+
+.message-header-list
+  // white-space nowrap
+  // overflow hidden
+  // height 45px
+  overflow hidden
+  width 100%
+  padding 0.3em
+  margin-bottom 1em
+  background-color #f8fafd
+  border-top 1px solid rgba(113,124,145,0.1)
+  border-bottom 1px solid rgba(113,124,145,0.1)
+  
+.message-header-list form
+  overflow hidden
+
+.message-header-list li
+  display inline-block
+  // margin-right 15px
+  float left
+
+.message-user-action-name
+  position relative
+  margin-right .5em
+  
+.message-header-list h1
+  position relative
+  font-size 18px
+  color #717c91
+  margin-top 10.5px
+  // top 50%
+  // -webkit-transform translateY(-50%)
+  // -moz-transform translateY(-50%)
+  // -ms-transform translateY(-50%)
+  // transform translateY(-50%)
+  
+.message-header-list h2
+  font-size 15px
+  line-height 1.2em
+  color #b1bacb
+  margin-top 10.5px
+  // top 50%
+  // -webkit-transform translateY(-50%)
+  // -moz-transform translateY(-50%)
+  // -ms-transform translateY(-50%)
+  // transform translateY(-50%)
+
+#message-action-date
+  position relative
+  float right
+  h2 
+    float right
+    font-size 14px
+
+.message-header p
+  position relative
+  width 870px
+  font-size 16px
+  color #b1bacb
+  margin-left 69px
+  top -10px
+  padding 0
+
+.message-header input
+  // width 828px
+  height 50px
+  border 1px solid #bdc6d8
+  // margin-left 144px
+  margin-bottom 1em
+  width 65%
+
+.message-info-list
+  // white-space nowrap
+  // width 1025px
+  // margin-left 50px
+  overflow hidden
+  background-color rgba(219,166,27,0.04)
+  border-top 1px solid rgba(113,124,145,0.1)
+  border-bottom 1px solid rgba(113,124,145,0.1)
+  padding 0.3em
+
+.message-info-list li
+  display inline-block
+  // margin-right 15px
+
+.message-info-action-name
+  position relative
+  
+.message-info-list h1
+  position relative
+  font-size 18px
+  color #717c91
+  margin-top 10.5px
+  // top 50%
+  // -webkit-transform translateY(-50%)
+  // -moz-transform translateY(-50%)
+  // -ms-transform translateY(-50%)
+  // transform translateY(-50%)
+  
+.message-info-list h2
+  font-size 14px
+  color #b1bacb
+  margin-top 10.5px
+  // top 50%
+  // -webkit-transform translateY(-50%)
+  // -moz-transform translateY(-50%)
+  // -ms-transform translateY(-50%)
+  // transform translateY(-50%)
+
+#message-action-date
+  position relative
+  float right
+
+.message-body p
+  position relative
+  word-wrap break-word
+  width 828px
+  font-size 16px
+  color #b1bacb
+  margin-left 145px
+  top -10px
+  padding 0
+
+  // FOOTER //
+footer
+  margin-top 15px
+  padding-left 15px
+  padding-right 15px
+  p
+    border-top 1px solid #d7e0e2
+  
+.play-modal-container
+  color #7887a2
+  min-height 340px
+  
+.play-modal-container legend
+  color #8091b2
+  padding 1.5em !important
+  padding-bottom 1em !important
+  
+.btn-link
+  color #7887a2
+  
+.form-control.text-center
+  padding 0
+  
+.play-modal-container button,
+.play-modal-container button:hover,
+.play-modal-container button:focus
+  background-color inherit
+  color #7887a2
+  outline 0
+  
+#playInput
+  border 2px solid #dce4ec
+  border-radius 4px
+  
+#datePickerCalendar {
+  border: none;
+  padding: 8px 15px;
+}
+
+#datePickerInput {
+  border: 0;
+}
+
+.play-modal-container .row
+  margin-left 1em
+  
+#actionStartText
+  margin-top 3.5em
+  
+table:focus
+  outline 0
+  
+table
+  border collapse
+  margin auto
+  
+.action-play-modal .modal-content
+  overflow visible !important
+  
+#playInput ul > li button
+  border 2px solid #dce4ec
+  
+#myTime
+  margin-top 3.5em
+  
+#playActionDate
+  margin-top 1em
+  
+.notification-badge {
+    position: relative;
+    &[data-badge-count]:after {
+        background: #dc5555;
+        border-radius: 100%;
+        color: #fff;
+        content: attr(data-badge-count);
+        font-size: 8px;
+        font-weight: 600;
+        height: 14px;
+        line-height: 14px;
+        padding: 0 5px;
+        position: absolute;
+        text-align: center;
+        top: 1.5em;
+        right: 1.5em;
+    }
+}
+
+.line-clamp {
+  position: relative;
+  height: 1.2em; /* exactly three lines */
+}
+.line-clamp:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    max-height:3.6em; /* I needed this to get it to work */
+    height: auto;
+  }
+  .line-clamp:after {
+    display: none;
+  }
+}
+.subheader-collapse
+  display inline
+
+
+/******************/
+/*** RESPONSIVE ***/
+/******************/
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .header-ul {
+    float: left;
+  }
+  .header-ul.right {
+    float: right;
+  }
+  .header-ul li {
+    display: inline-block;
+  }
+  .subheader-collapse {
+    display: none !important;
+  }
+  .subheader-container {
+    width: 90%;
+    padding-right: 0;
+  }
+  .subheader-container li {
+    padding: 3px;
+  }
+  .dropdown-menu.pull-right {
+    float: left !important;
+  }
+  #list-of-actions {
+    text-align: center;
+  }
+  .add-action {
+    top: .4em;
+    left: 1em;
+  }
+  .subheader-sort img {
+    margin: 0 5px;
+  }
+  .search-filter {
+    width: 80%;
+    height: 100%;
+    top: 10px;
+    float: left;
+    float: none;
+    overflow: hidden;
+    margin: auto;
+  }
+  .nav > li > a {
+    padding: 19px 15px;
+  }
+  .search-filter form .form-group {
+    overflow: hidden;
+  }
+  .modal.fade .modal-dialog {
+    top: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(-50%, 0, 0);
+    -ms-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+    width: 100%;
+  }
+  #group h1 {
+    padding: 0;
+    margin: 0 1.2em !important;
+    overflow: hidden !important;
+  }
+  .action-detail-list {
+    padding: 0;
+    margin: 0 1.2em !important;
+    margin-bottom: 1em !important;
+    overflow: hidden;
+    height: auto;
+  }
+  #coment-list span {
+    display: inline-block;
+    width: 80%;
+  }
+  body.modal-open #wrap {
+    -webkit-filter blur(0px)
+    -moz-filter blur(0px)
+    -o-filter blur(0px)
+    -ms-filter blur(0px)
+    filter blur(0px)
+  }
+  .login-button {
+    margin-top: 0;
+  }
+  // ACTION CREATE //
+  .modal-content { 
+    width: 100%;
+  }
+  .add-action-modal .modal-dialog {
+    width: 95%;
+    height: 95%;
+  }
+  .action-create-modal-container {
+    width: 100%;
+  }
+  .action-create-list {
+    position: relative
+    width: 90%;
+    height: 90%;
+  }
+  .action-update-long-form {
+    width: 48%;
+    height: 30px;
+  }  
+  .action-update-short-form {
+    width: 20%;
+    height: 30px;
+  }
+  .action-edit-header {
+    width: 80%;
+    height: 100px;
+  }
+  #select-picture-action {
+    bottom: 0px;
+  }
+  .choose-file-input-action {
+    position: relative;
+    width: 100%;
+    top: -10px;
+    left: 55px;
+  }
+  #myImageName-action {
+    margin-left: 0px;
+    width: 110px;
+    height: 35px;
+  }
+  .cropArea-action {
+    width: 100px;
+    height: 100px;
+    margin-left: 0px;
+  }  
+  #imggContainer-action {
+    top: 0px;
+    left: -10px;
+    width: 80px;
+    height: 80px;
+  }
+  #imggContainer-action img {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    left: 0px;
+  }
+  #imggContainer-label-action {
+    top: -38px;
+    left: 0px;
+  }  
+  #action-create-buttons {
+    margin-top: 40px;
+    left: 27%;
+  }  
+  ////////////////// 
+  // EDIT PROFILE //
+  //////////////////
+  
+  .user-edit-modal {
+    width: 100%;
+  }  
+  .user-edit-modal .modal-dialog {
+    width: 100%;
+    height: 95%;
+  }  
+  .user-edit-modal-form {
+    margin-top: 70px;
+  }
+  .user-edit-list input {
+    width: 25%;
+    height: 30px;
+  }  
+  .user-header-list {
+    width: 260px;
+  }
+  #myImageName {
+    visibility: hidden;
+  }
+  .imggContainer {
+    top: -10px;
+    left: -10px;
+    width: 80px;
+    height: 80px;
+  }
+  .imggContainer img {
+    width: 80px;
+    height: 80px;
+    top: -20px;
+    left: 0px;
+  } 
+  #imggContainer-label {
+    top: -32px;
+    width: 100px;
+    left: 0px;
+  }  
+  .user-edit-buttons {
+    margin-top: 30px;
+    left: 15%;
+  }
+  .cropArea {
+    width: 100px;
+    height: 100px;
+    margin-left: 0px;
+  }
+  
+  
+  /////////////////
+  // EDIT ACTION //
+  /////////////////
+  
+  .action-update-modal-container .modal-dialog{
+    height: 550px;
+    width: 100%;
+  }
+  
+  .action-update-modal-container {
+    height: auto;
+    width: 100%;
+  }
+  
+  
+  .action-update-header {
+    position: relative;
+    top: 170px;
+    width: 80%;
+    height: 100px;
+    // border: 1px solid red;
+  }
+  
+  .action-header-collapsed-list {
+    // border: 1px solid blue;
+    top: 185px;
+  }
+  
+  .action-update-buttons {
+    position: relative;
+    top: 160px;
+    margin-top: 40px;
+    left: 80px;
+    margin-bottom: 185px;
+  }
+
+  
+}
+
+
+
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .search-filter {
+    top: 0;
+    float: left;
+    width: 40%;
+    overflow: hidden;
+  }
+}

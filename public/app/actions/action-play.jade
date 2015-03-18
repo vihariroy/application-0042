@@ -1,0 +1,35 @@
+.play-modal-container
+  div.loading2(ng-hide="loaded")
+    div.bullets
+    div.bullet
+    div.bullet
+    div.bullet
+    div.bullet
+  div(ng-cloak="" ng-show="loaded")
+    form.form-horizontal(name="playActionForm")
+      fieldset
+        legend Schedule Actions
+        .container
+          div.row
+            div.col-md-3#playActionDate
+              p Action Date
+            div.col-md-9
+              p.input-group#playInput
+                input.form-control#datePickerInput(type="text" placeholder="dd-MMMM-yyyy" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" ng-required="true" close-text="Close")
+                span.input-group-btn
+                  button.btn.btn-default#datePickerCalendar(type="button" ng-click="openCalendar($event)")
+                    img(src="../../img/calendar-icon.png")
+          div.row
+            div.col-md-3#actionStartText
+              p Action Start
+            div.col-md-9
+              p.input-group.col-md-6
+                timepicker(ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="false")
+              p.col-md-6#myTime {{dt | date:'mediumDate' }} | {{mytime | date:'shortTime' }}
+          .form-group
+            .col-md-10.col-md-offset-2
+              .pull-right
+                button.btn.btn-primary(ng-click="playAction(dt, mytime, action_id)", ng-disabled="playActionForm.$invalid", novalidate) Submit
+                | &nbsp;
+                a.btn.btn-default(href="", ng-click="closeModal()") Cancel
+              

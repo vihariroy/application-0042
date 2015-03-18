@@ -1,0 +1,10 @@
+.panel.panel-primary
+  .panel-heading.text-center New Actions
+  .panel-body
+    .row(ng-show="action.private == false", ng-repeat="action in actions | orderBy:'startedDatetime':true | limitTo:10")
+      .col-xs-3 {{action.startedDatetime | date:'shortDate'}} 
+        | - {{action.startedDatetime | date:'H:mm'}}
+      .col-xs-6
+        a(href="/actions/{{action._id}}") {{action.actionName}}
+      .col-xs-3 By  
+        b {{action.byUsername}}

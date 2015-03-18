@@ -1,0 +1,55 @@
+div.action-update-modal-container
+  h1 Edit Action
+  img(src="img/svg/x.svg", ng-click="closeModal()")
+  form(name="updateActionForm")
+    ul.list-unstyled.action-update-list
+      li
+        // Action name
+        .form-group(ng-class="{ 'has-error' : updateActionForm.actionName.$invalid && !updateActionForm.actionName.$pristine }")
+          label(for="actionName") Action Name
+          input.action-update-long-form(autocomplete="off", name="actionName", type="text", placeholder="Action Name", ng-model="action.actionName", ng-minlength="5")
+          p.help-block(ng-show="updateActionForm.actionName.$error.minlength") Action name is too short.
+      li
+        // Time spent
+        .form-group.form-group(ng-class="{ 'has-error' : updateActionForm.timeSpent.$invalid && !updateActionForm.timeSpent.$pristine }")
+          label(for="timeSpent") Time Spent
+          input.action-update-short-form(name="timeSpent", type="text", placeholder="Time Spent (minutes)", ng-model="action.timeSpent", ng-pattern="/^[0-9]{1,7}$/", autocomplete="off")
+          p.help-block(ng-show="updateActionForm.timeSpent.$invalid && !updateActionForm.timeSpent.$pristine") Enter a valid time spent.
+      li
+        // Money spent
+        .form-group.form-group(ng-class="{ 'has-error' : updateActionForm.moneySpent.$invalid && !updateActionForm.moneySpent.$pristine }")
+          label(for="moneySpent") Money Spent
+          input.action-update-short-form(name="moneySpent", type="text", placeholder="Money Spent (dollars)", ng-model="action.moneySpent", ng-pattern="/^[0-9]{1,7}$/", autocomplete="off")
+          p.help-block(ng-show="updateActionForm.moneySpent.$invalid && !updateActionForm.moneySpent.$pristine") Enter a valid money spent.
+      li
+        // Repeat
+        .form-group
+          label(for="repeat") Repeat
+          input.action-update-short-form(autocomplete="off", name="repeat", type="text", placeholder="Repeat", ng-pattern="/^[0-9]{1,7}$/", ng-model="action.repeat")
+      li
+        // Location
+        .form-group
+          label(for="location") Location
+          input.action-update-long-form(autocomplete="off", name="location", type="text", placeholder="Location", ng-model="action.location")
+  div.action-update-header(ng-click="isCollapsed=!isCollapsed")
+    ul
+      li
+        div#select-picture-action Upload image
+      li.choose-file-input-action
+        input#fileInput-action(type="file")
+        div#myImageName-action {{myImageName}}
+        
+  div.action-header-collapsed-list(collapse="isCollapsed")
+    ul
+      li
+        div.cropArea-action
+          img-crop(image="myImage" result-image="myCroppedImage")
+      li#imggContainer-action
+        div#imggContainer-label-action Cropped image
+        div
+          img(ng-src="{{myCroppedImage}}")         
+  div.action-update-buttons 
+    .form-group
+      a.btn.btn-default(href="/my-actions" ng-click="closeModal()") Cancel
+      button.btn.btn-primary(ng-click="updateAction(action._id)", ng-disabled="updateActionForm.$invalid", novalidate) Submit
+        

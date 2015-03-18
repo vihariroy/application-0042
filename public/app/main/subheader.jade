@@ -1,0 +1,32 @@
+.container
+  a.add-action.col-xs-1(href="" ng-show="identity.isAuthenticated()" ng-click="addActionOpen('sm')")
+    img#add(src="img/add-action.png")
+  ul.subheader-container.col-xs-9
+    li.hvr-underline-from-center(ng-class="{'active':isActiveTab(0)}" ng-click="changeTab(0); $parent.sortOrder = 'actionName'")
+      img(src="img/action-name-icon.png")
+      span.subheader-collapse Action Name
+        
+    li.hvr-underline-from-center(ng-class="{'active':isActiveTab(1)}" ng-click="changeTab(1); $parent.sortOrder = '-startedDatetime'")
+      img(src="img/started-datetime-icon.png")
+      span.subheader-collapse Started Datetime
+        
+    li.hvr-underline-from-center(ng-class="{'active':isActiveTab(2)}" ng-click="changeTab(2); $parent.sortOrder = 'user.firstName || user.username'")
+      img(src="img/by-username-icon.png")
+      span.subheader-collapse By Username
+        
+    li.hvr-underline-from-center(ng-class="{'active':isActiveTab(3)}" ng-click="changeTab(3); $parent.sortOrder = 'timeSpent'")
+      img(src="img/time-spent-icon.png")
+      span.subheader-collapse Time Spent
+        
+    li.hvr-underline-from-center(ng-class="{'active':isActiveTab(4)}" ng-click="changeTab(4); $parent.sortOrder = '-moneySpent'")
+      img(src="img/money-spent-icon.png")
+      span.subheader-collapse Money Spent
+        
+    li.hvr-underline-from-center(ng-class="{'active':isActiveTab(5)}" ng-click="changeTab(5); $parent.sortOrder = '-repeat'")
+      img(src="img/repeat-icon.png")
+      span.subheader-collapse Repeat
+      
+  .search-filter.col-md-2.col-xs-6
+    form.form-inline
+      .form-group
+        input.form-control.search-input.col-xs-5(ng-model="$parent.q", placeholder="Search")
