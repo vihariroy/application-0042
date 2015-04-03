@@ -9,7 +9,7 @@ module.exports = {
   },
   production: {
     // Add yours
-    db: 'mongodb://username:password@something.com:post/0042',
+    db: 'mongodb://giving:0042@ds061767.mongolab.com:61767/0042',
     rootPath: rootPath,
     port: process.env.PORT || 80
   }
